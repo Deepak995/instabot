@@ -30,7 +30,6 @@ class instabot:
         os.mkdir(dirr)
 
     def fetching_followings_count_info(self):
-        #self.login('deepak_choudhary_777', 'instagram295')
         time.sleep(3)
         self.driver.find_element_by_xpath('//div[@class="RR-M-  _2NjG_"]//a[@class="_2dbep qNELH kIKUG"]').click()
         time.sleep(2)
@@ -66,7 +65,6 @@ class instabot:
         return count, names
 
     def fetching_followers_count_info(self):
-        #self.login('deepak_choudhary_777', 'instagram295')
         time.sleep(3)
         #self.driver.find_element_by_xpath('//div[@class="RR-M-  _2NjG_"]//a[@class="_2dbep qNELH kIKUG"]').click()
         time.sleep(1)
@@ -112,7 +110,6 @@ class instabot:
         return cheap_ppl_count, cheap_ppl
 
     def action_on_greedy_people(self, cheap_ppl):
-        #self.login('deepak_choudhary_777', 'instagram295')
         unfollowing_ppl = []
         f = open('D:/insta/unfollowed' + str(self.date_obj) + '.txt', 'w')
         f.write('*****************PEOPLE YOU HAVE UNFOLLOWED : {} **************')
@@ -158,7 +155,7 @@ class instabot:
         f.close()
         j.close()
 obj = instabot()
-obj.login('deepak_choudhary_777', 'instagram295')
+obj.login('username', 'pass')
 following_count, following_names = obj.fetching_followings_count_info()
 followers_count, followers_names = obj.fetching_followers_count_info()
 cheap_ppl_count, cheap_ppl = obj.fetching_greedy_people(following_names, followers_names)
